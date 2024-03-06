@@ -28,6 +28,8 @@ WebUI.maximizeWindow()
 WebUI.selectAllOption(findTestObject('dropDown'), FailureHandling.CONTINUE_ON_FAILURE)
 
 //WebUI.click(findTestObject('dropDown'))
+//WebUI.click(findTestObject('dropDown'
+
 WebUI.delay(3)
 
 KeywordUtil.logInfo('passed')
