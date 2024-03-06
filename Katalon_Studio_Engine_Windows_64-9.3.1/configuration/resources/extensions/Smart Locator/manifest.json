@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Locator",
+  "description": "",
+  "version": "1.0",
+  "icons": {
+    "16": "images/branding_16.png",
+    "48": "images/branding_48.png",
+    "128": "images/branding_128.png"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "webRequest",
+    "contextMenus",
+    "downloads",
+    "webNavigation",
+    "notifications",
+    "storage",
+    "unlimitedStorage",
+    "debugger",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/",
+    "https://*/",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "match_about_blank": true,
+      "matches": [
+          "<all_urls>"
+      ],
+      "run_at": "document_start",
+      "js": [
+        "common/browser-polyfill.js",
+        "smartLocator/smart-injector.js",
+        "smartLocator/smart-locator.js"
+      ]
+    }
+  ],
+  "action": {
+      "default_icon": "images/branding_16.png",
+      "default_title": "Katalon Studio Smart Locator"
+  },
+  "web_accessible_resources": [{
+    "resources": [
+      "smartLocator/smart-locator.js",
+      "smartLocator/bundle.js"
+    ],
+    "matches": [
+      "<all_urls>"
+    ]
+  }]
+}
